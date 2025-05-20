@@ -1,14 +1,19 @@
-const express=require("express");
-const multiparty=require("connect-multiparty");
+const express = require("express");
+const multiparty = require("connect-multiparty");
+const path = require("path");
 
-const productosController=require("../controllers/productos.controller");
+// Middleware para subir archivos, con carpeta uploads
+const md_mparty = multiparty({ uploadDir: path.resolve(__dirname, "../uploads") });
 
-const md_mparty=multiparty();
-const api=express.Router();
+const productosController = require("../controllers/productos.controller");
 
-api.post("/createproduct",[md_mparty], productosController.createProducto);
+const api = express.Router();
+
+// Rutas de producto
+api.post("/createproducto", md_mparty, productosController.createProducto);
 api.get("/getproducto", productosController.getProducto);
-api.patch("/updateproducto/:id",[md_mparty],productosController.updateProducto);
-api.delete('/delproducto/:id', productosController.delProducto);
+api.put("/updateproducto/:id", md_mparty, productosController.updateProducto);
+ // ← corregido de PATCH a PUT
+api.delete("/delproducto/:id", productosController.delProducto);
 
-module.exports=api;
+module.exports = api;

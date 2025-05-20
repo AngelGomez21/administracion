@@ -1,26 +1,17 @@
-const express= require("express");
+const express = require("express");
 const cors = require("cors");
-const bodyParser=require("body-parser");
-const path=require("path");
+const path = require("path");
+const productosRoutes = require("./routes/Producto.routes");
 
-//Importar rutas
-const productosRoute=require("./routes/Producto.routes");
+const app = express();
 
-//Config express
-const app=express();
+// Importante: Debe ir antes de las rutas API para que las imágenes se sirvan correctamente
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-//Parsear la informacion
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-
-//Configurar carpeta de carga de files
-//app.use(express.static("uploads"));
- app.use(express.static(path.join(__dirname,'uploads')));
-
-//Configuracion de cors
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-//uso de las rutas
-app.use('/api', productosRoute);
 
-//exportar express
-module.exports=app;
+app.use("/api", productosRoutes);
+
+module.exports = app;

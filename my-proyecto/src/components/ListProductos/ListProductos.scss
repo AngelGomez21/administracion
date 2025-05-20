@@ -1,0 +1,120 @@
+/* Animaciones */
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
+  }
+  50% {
+    box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
+  }
+}
+
+/* Estilos generales */
+.list-productos__table {
+  background-color: transparent; // fondo transparente
+  color: #00ffee;
+  border: 1px solid #00ffcc;
+  animation: fadeInRow 0.5s ease-in-out;
+  text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee; // efecto neón
+
+  th, td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    background-color: transparent;
+    color: #00ffee;
+    text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee; // neón en celdas
+  }
+
+  thead {
+    background-color: rgba(17, 17, 17, 0.6); // encabezado con leve fondo
+    color: #00ffee;
+    border-bottom: 2px solid #00ffee;
+    text-shadow: 0 0 6px #00ffee, 0 0 12px #00ffee; // encabezado más brillante
+  }
+
+  tbody tr {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(17, 17, 17, 0.4); // hover suave
+    }
+  }
+
+  i, svg { // para íconos dentro de la tabla
+    color: #00ffee;
+    text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee;
+  }
+}
+
+/* Imagen */
+.list-productos__imagen {
+  max-width: 80px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+/* Sin imagen */
+.list-productos__sin-imagen {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Botones */
+.list-productos__boton {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+
+  &:hover {
+    animation: glow 1.2s infinite alternate;
+    color: #000;
+  }
+
+  &.btn-danger {
+    background-color: #ff4d4d;
+    border: none;
+  }
+
+  &.btn-warning {
+    background-color: #ffcc00;
+    border: none;
+    color: #000;
+  }
+
+  &.btn-success {
+    background-color: #00cc99;
+    border: none;
+  }
+
+  &.btn-secondary {
+    background-color: #888;
+    border: none;
+  }
+}
+
+/* Inputs en edición */
+.form-control {
+  background-color: #1e1e1e;
+  border: 1px solid #00ffcc;
+  color: #00ffee;
+  text-shadow: 0 0 5px #00ffee;
+
+  &:focus {
+    box-shadow: 0 0 10px #00ffee;
+    background-color: #252525;
+    border-color: #00ffee;
+    color: #00ffee;
+  }
+}

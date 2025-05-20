@@ -1,6 +1,46 @@
-.align-it{
-    display: flex;
-    align-content: space-between;
-    align-items: center;
-    background-color: "white";
+// Fondo general del componente
+.container {
+  background-color: #111;
+  color: #00ffee;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ffee;
+}
+
+// Personalización de las pestañas
+.nav-tabs {
+  border-bottom: 2px solid #00ffee;
+  margin-bottom: 1.5rem;
+
+  .nav-link {
+    color: #00ffee;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffee;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-color: #00ffee;
+      background-color: rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 12px #00ffee;
+    }
+
+    &.active {
+      color: #000;
+      background-color: #00ffee;
+      border-color: #00ffee;
+      text-shadow: none;
+      box-shadow: 0 0 15px #00ffee, 0 0 25px #00ffee;
+    }
+  }
+}
+
+// Tarjetas de productos (solo para mantener coherencia visual)
+.p-2 {
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
 }

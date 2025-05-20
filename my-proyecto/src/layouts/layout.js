@@ -1,10 +1,11 @@
 import React from "react";
 import { Menu } from "../components/inicio";
 import { Footer } from "../page/Footer";
+import "./layout.scss";
 
 export function Layout({ children }) {
   return (
-    <div>
+    <div className="layout-container">
       <div className="menu">
         <Menu />
       </div>
