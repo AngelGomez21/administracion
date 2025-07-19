@@ -8,7 +8,7 @@ const {
   DB_PORT,
 } = require("./constantes");
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 let uri = "";
 

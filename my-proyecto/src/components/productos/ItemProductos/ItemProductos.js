@@ -8,7 +8,7 @@ export function ItemProductos({ producto }) {
       {producto.imagep ? (
         <Card.Img
           variant="top"
-          src={`http://localhost:4000/uploads/${producto.imagep}`}  // Usa la ruta correcta a tu backend
+          src={`http://localhost:5000/uploads/${producto.imagep}`}
           alt={producto.nombre}
           style={{ maxHeight: "180px", objectFit: "cover" }}
         />
@@ -31,9 +31,7 @@ export function ItemProductos({ producto }) {
         <Card.Text className="body__text">
           <strong>Precio:</strong> {producto.precio}
           <br />
-          <strong>Clasificación:</strong> {producto.clasificacion}
-          <br />
-          <strong>Plataforma:</strong> {producto.plataforma}
+          <strong>Cantidad:</strong> {producto.cantidad}
         </Card.Text>
       </Card.Body>
     </Card>

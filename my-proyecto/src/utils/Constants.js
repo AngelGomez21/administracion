@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const localH = "http://localhost:4000/api";            // Base API
-const uploadsPath = "http://localhost:4000/uploads/";  // Ruta para acceder a imágenes subidas
+const localH = "http://localhost:5000/api";            // Base API
+const uploadsPath = "http://localhost:5000/uploads/";  // Ruta para acceder a imágenes subidas
 
 export const ENV = {
   BASE_API: localH,

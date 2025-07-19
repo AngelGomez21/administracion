@@ -4,8 +4,7 @@ export function initialValues() {
   return {
     nombre: "",
     precio: "",
-    clasificacion: "",
-    plataforma: "",
+    cantidad: "",
     imagen: "",       // Para vista previa
     imagenFile: null  // Para archivo real
   };
@@ -28,11 +27,11 @@ export function validationSchema() {
       .required("El precio es obligatorio")
       .positive("El precio debe ser mayor a cero"),
 
-    clasificacion: YUP.string()
-      .required("La clasificación es obligatoria"),
-
-    plataforma: YUP.string()
-      .required("La plataforma es obligatoria"),
+    cantidad: YUP.number()
+      .typeError("La cantidad debe ser un número válido")
+      .required("La cantidad es obligatoria")
+      .integer("La cantidad debe ser un número entero")
+      .min(1, "La cantidad debe ser al menos 1"),
 
     imagen: YUP.string() // opcional
   });

@@ -20,7 +20,7 @@ const ctrProducto = new Producto();
 
 export function Productos() {
   const [productos, setProductos] = useState([]);
-  const [showModal, setShowModal] = useState(false); // estado para modal
+  const [showModal, setShowModal] = useState(false);
 
   const obtenerProductos = async () => {
     try {
@@ -66,8 +66,7 @@ export function Productos() {
         const formData = new FormData();
         formData.append("nombre", formValue.nombre);
         formData.append("precio", formValue.precio);
-        formData.append("clasificacion", formValue.clasificacion);
-        formData.append("plataforma", formValue.plataforma);
+        formData.append("cantidad", formValue.cantidad);
 
         if (formValue.imagenFile) {
           formData.append("imagep", formValue.imagenFile);
@@ -77,7 +76,7 @@ export function Productos() {
         await obtenerProductos();
         alert("Producto agregado con éxito");
         resetForm();
-        setShowModal(false); // cerrar modal al enviar
+        setShowModal(false);
       } catch (error) {
         console.error("Error al agregar el producto:", error);
         alert("Hubo un error al agregar el producto");
@@ -124,10 +123,10 @@ export function Productos() {
           <Form noValidate onSubmit={formik.handleSubmit}>
             <Row className="mb-3">
               <Form.Group as={Col} md="12" controlId="validationCustom01">
-                <Form.Label>Nombre del juego</Form.Label>
+                <Form.Label>Nombre del Producto</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Nombre del juego"
+                  placeholder="Nombre del Producto"
                   name="nombre"
                   onChange={formik.handleChange}
                   value={formik.values.nombre}
@@ -161,38 +160,24 @@ export function Productos() {
               </Form.Group>
 
               <Form.Group as={Col} md="6">
-                <Form.Label>Clasificación</Form.Label>
+                <Form.Label>Cantidad</Form.Label>
                 <Form.Control
-                  type="text"
-                  name="clasificacion"
-                  placeholder="Clasificación"
-                  value={formik.values.clasificacion}
+                  type="number"
+                  name="cantidad"
+                  placeholder="Cantidad"
+                  value={formik.values.cantidad}
                   onChange={formik.handleChange}
-                  isInvalid={!!formik.errors.clasificacion}
+                  isInvalid={!!formik.errors.cantidad}
+                  min="1"
                 />
                 <Form.Control.Feedback type="invalid">
-                  {formik.errors.clasificacion}
+                  {formik.errors.cantidad}
                 </Form.Control.Feedback>
               </Form.Group>
             </Row>
 
             <Row className="mb-3">
-              <Form.Group as={Col} md="6">
-                <Form.Label>Plataforma</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="plataforma"
-                  placeholder="Plataforma"
-                  value={formik.values.plataforma}
-                  onChange={formik.handleChange}
-                  isInvalid={!!formik.errors.plataforma}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {formik.errors.plataforma}
-                </Form.Control.Feedback>
-              </Form.Group>
-
-              <Form.Group as={Col} md="6">
+              <Form.Group as={Col} md="12">
                 <Form.Label>Imagen</Form.Label>
                 <Form.Control
                   type="file"

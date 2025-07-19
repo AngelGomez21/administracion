@@ -25,32 +25,32 @@
 
 @keyframes neonPulse {
   0%, 100% {
-    box-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff;
+    box-shadow: 0 0 6px #0077ff, 0 0 12px #0077ff;
   }
   50% {
-    box-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff;
+    box-shadow: 0 0 12px #005fcc, 0 0 24px #005fcc;
   }
 }
 
 .navbar-custom {
-  background-color: #0d0d0d !important;
-  border-bottom: 2px solid #00ff99;
-  box-shadow: 0 0 15px #00ff99;
+  background-color: #ffffff !important;  // fondo blanco
+  border-bottom: 2px solid #0077ff;
+  box-shadow: 0 0 15px #0077ff;
 
   &.fade-slide {
     animation: fadeSlideDown 0.6s ease-out;
   }
 
   .navbar-brand {
-    color: #00ff99 !important;
+    color: #0077ff !important;
     font-weight: 900;
     font-size: 1.8rem;
-    text-shadow: 0 0 8px #00ff99;
+    text-shadow: 0 0 8px #0077ff;
     cursor: pointer;
 
     &:hover {
-      color: #00cc77 !important;
-      text-shadow: 0 0 15px #00cc77;
+      color: #005fcc !important;
+      text-shadow: 0 0 15px #005fcc;
     }
   }
 
@@ -69,10 +69,12 @@
       cursor: pointer;
       white-space: nowrap;
       position: relative;
+      color: #0077ff !important;
 
       &:hover,
       &:focus {
         animation: hoverBounce 0.4s ease-in-out;
+        color: #005fcc !important;
       }
     }
 
@@ -80,23 +82,23 @@
     .nav-link.home,
     .nav-link.productos,
     .nav-link.gestion {
-      border: 2px solid #00ffff !important;
+      border: 2px solid #0077ff !important;
       border-radius: 12px !important;
       padding: 6px 16px !important;
       margin: 0 4px;
       background-color: transparent !important;
-      color: #00ffff !important;
+      color: #0077ff !important;
       font-weight: 700 !important;
-      box-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff !important;
+      box-shadow: 0 0 8px #0077ff, 0 0 16px #0077ff !important;
       animation: neonPulse 2.5s infinite ease-in-out;
       transition: box-shadow 0.3s ease, color 0.3s ease;
 
       &:hover,
       &:focus {
-        color: #ccffff !important;
-        box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff !important;
-        background-color: rgba(0, 255, 255, 0.1) !important;
-        text-shadow: 0 0 8px #00ffff !important;
+        color: #aaddff !important;
+        box-shadow: 0 0 20px #0077ff, 0 0 40px #0077ff !important;
+        background-color: rgba(0, 119, 255, 0.1) !important;
+        text-shadow: 0 0 8px #0077ff !important;
       }
     }
   }

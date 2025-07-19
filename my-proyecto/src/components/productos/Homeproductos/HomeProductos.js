@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Tabs, Tab, Row, Col } from "react-bootstrap";
+import { Tabs, Tab, Row, Col, FormControl } from "react-bootstrap";
 import { ItemProductos } from "../ItemProductos";
 import { Producto } from "../../../api";
 import './HomeProducto.scss';
@@ -9,7 +9,8 @@ const ctrProducto = new Producto();
 export function HomeProductos() {
   const [productos, setProductos] = useState([]);
   const [activeTab, setActiveTab] = useState("home");
-  const [isTabOpen, setIsTabOpen] = useState(true); // Control de expansión
+  const [isTabOpen, setIsTabOpen] = useState(true);
+  const [busqueda, setBusqueda] = useState("");
 
   const obtenerProductos = async () => {
     try {
@@ -34,14 +35,17 @@ export function HomeProductos() {
 
   const handleTabClick = (tabKey) => {
     if (activeTab === tabKey) {
-      // Si es el mismo tab, alternar abierto/cerrado
       setIsTabOpen(!isTabOpen);
     } else {
-      // Cambiar de tab y asegurar que esté abierto
       setActiveTab(tabKey);
       setIsTabOpen(true);
     }
   };
+
+  // Filtrar productos solo por nombre
+  const productosFiltrados = productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
+  );
 
   return (
     <div className="container" style={fondo.tema}>
@@ -53,15 +57,25 @@ export function HomeProductos() {
       >
         <Tab eventKey="home" title="Lista de Productos">
           {isTabOpen && (
-            <Row xs={1} sm={2} md={3} lg={4}>
-              {productos.map((producto, index) => (
-                <Col key={producto._id || index}>
-                  <div className="p-2">
-                    <ItemProductos producto={producto} />
-                  </div>
-                </Col>
-              ))}
-            </Row>
+            <>
+              <FormControl
+                type="search"
+                placeholder="Buscar por nombre..."
+                className="mb-3"
+                value={busqueda}
+                onChange={(e) => setBusqueda(e.target.value)}
+              />
+
+              <Row xs={1} sm={2} md={3} lg={4}>
+                {productosFiltrados.map((producto, index) => (
+                  <Col key={producto._id || index}>
+                    <div className="p-2">
+                      <ItemProductos producto={producto} />
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </>
           )}
         </Tab>
       </Tabs>

@@ -12,49 +12,49 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
+    box-shadow: 0 0 5px #0077ff, 0 0 10px #0077ff, 0 0 15px #0077ff;
   }
   50% {
-    box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
+    box-shadow: 0 0 10px #005fcc, 0 0 20px #005fcc, 0 0 30px #005fcc;
   }
 }
 
 /* Estilos generales */
 .list-productos__table {
-  background-color: transparent; // fondo transparente
-  color: #00ffee;
-  border: 1px solid #00ffcc;
+  background-color: #fff; /* fondo blanco */
+  color: #0044cc; /* azul oscuro */
+  border: 1px solid #005fcc; /* borde azul */
   animation: fadeInRow 0.5s ease-in-out;
-  text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee; // efecto neón
+  text-shadow: none; /* sin neón para fondo blanco */
 
   th, td {
     vertical-align: middle;
     text-align: center;
     padding: 10px;
     font-weight: 600;
-    background-color: transparent;
-    color: #00ffee;
-    text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee; // neón en celdas
+    background-color: #f9f9f9; /* fondo claro para celdas */
+    color: #0044cc;
+    text-shadow: none;
   }
 
   thead {
-    background-color: rgba(17, 17, 17, 0.6); // encabezado con leve fondo
-    color: #00ffee;
-    border-bottom: 2px solid #00ffee;
-    text-shadow: 0 0 6px #00ffee, 0 0 12px #00ffee; // encabezado más brillante
+    background-color: #e0e7ff; /* azul muy claro */
+    color: #003399;
+    border-bottom: 2px solid #0044cc;
+    text-shadow: none;
   }
 
   tbody tr {
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: rgba(17, 17, 17, 0.4); // hover suave
+      background-color: #d0dbff; /* hover azul claro */
     }
   }
 
-  i, svg { // para íconos dentro de la tabla
-    color: #00ffee;
-    text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee;
+  i, svg {
+    color: #0044cc;
+    text-shadow: none;
   }
 }
 
@@ -62,12 +62,12 @@
 .list-productos__imagen {
   max-width: 80px;
   border-radius: 8px;
-  box-shadow: 0 0 10px #00ffcc;
+  box-shadow: 0 0 10px #005fcc50; /* sombra azul tenue */
 }
 
 /* Sin imagen */
 .list-productos__sin-imagen {
-  color: #aaa;
+  color: #666;
   font-style: italic;
 }
 
@@ -79,11 +79,11 @@
 
   &:hover {
     animation: glow 1.2s infinite alternate;
-    color: #000;
+    color: #fff;
   }
 
   &.btn-danger {
-    background-color: #ff4d4d;
+    background-color: #cc3333;
     border: none;
   }
 
@@ -94,7 +94,7 @@
   }
 
   &.btn-success {
-    background-color: #00cc99;
+    background-color: #009966;
     border: none;
   }
 
@@ -106,15 +106,15 @@
 
 /* Inputs en edición */
 .form-control {
-  background-color: #1e1e1e;
-  border: 1px solid #00ffcc;
-  color: #00ffee;
-  text-shadow: 0 0 5px #00ffee;
+  background-color: #f0f4ff; /* fondo muy claro */
+  border: 1px solid #005fcc;
+  color: #0044cc;
+  text-shadow: none;
 
   &:focus {
-    box-shadow: 0 0 10px #00ffee;
-    background-color: #252525;
-    border-color: #00ffee;
-    color: #00ffee;
+    box-shadow: 0 0 10px #005fcc;
+    background-color: #e6ecff;
+    border-color: #0044cc;
+    color: #003399;
   }
 }

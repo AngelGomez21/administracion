@@ -1,11 +1,11 @@
 .home-container {
-  background-color: #000;
-  color: #00ffee; /* texto neón azul claro */
-  height: 100vh; /* para que ocupe toda la pantalla */
+  background-color: #fff; /* fondo blanco */
+  color: #0077ff; /* azul brillante */
+  height: 100vh; /* ocupa toda la pantalla */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   font-weight: 700;
-  text-shadow: 0 0 8px #00ffee;
+  text-shadow: 0 0 8px #0077ff;
 }

@@ -1,45 +1,45 @@
 // Fondo general del componente
 .container {
-  background-color: #111;
-  color: #00ffee;
+  background-color: #fff;          // fondo blanco
+  color: #0000ff;                 // texto azul
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px #00ffee;
+  box-shadow: 0 0 20px #0000ff50; // sombra azul clara (semi-transparente)
 }
 
 // Personalización de las pestañas
 .nav-tabs {
-  border-bottom: 2px solid #00ffee;
+  border-bottom: 2px solid #0000ff; // línea azul
   margin-bottom: 1.5rem;
 
   .nav-link {
-    color: #00ffee;
+    color: #0000ff;                // texto azul
     font-weight: bold;
-    text-shadow: 0 0 5px #00ffee;
+    text-shadow: none;             // sin sombra para texto claro
     border: 1px solid transparent;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      border-color: #00ffee;
-      background-color: rgba(0, 255, 255, 0.1);
-      box-shadow: 0 0 12px #00ffee;
+      border-color: #0000ff;
+      background-color: rgba(0, 0, 255, 0.1); // azul claro transparente
+      box-shadow: 0 0 12px #0000ff60;
     }
 
     &.active {
-      color: #000;
-      background-color: #00ffee;
-      border-color: #00ffee;
+      color: #fff;                 // texto blanco para el tab activo
+      background-color: #0000ff;  // azul fuerte para activo
+      border-color: #0000ff;
       text-shadow: none;
-      box-shadow: 0 0 15px #00ffee, 0 0 25px #00ffee;
+      box-shadow: 0 0 15px #0000ff, 0 0 25px #0000ff;
     }
   }
 }
 
-// Tarjetas de productos (solo para mantener coherencia visual)
+// Tarjetas de productos (hover)
 .p-2 {
   transition: transform 0.2s ease;
-  
+
   &:hover {
     transform: scale(1.02);
   }

@@ -1,37 +1,37 @@
 .card {
-  background-color: #111;
-  color: #00ffee;
-  border: 2px solid #00ffee;
-  box-shadow: 0 0 12px #00ffee;
+  background-color: #fff;            // fondo blanco
+  color: #0000ff;                   // texto azul
+  border: 2px solid #0000ff;        // borde azul fuerte
+  box-shadow: 0 0 12px #0000ff50;  // sombra azul suave (semi-transparente)
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
   overflow: hidden;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px #00ffee, 0 0 30px #00ffee;
+    box-shadow: 0 0 20px #0000ff, 0 0 30px #0000ff80;
   }
 
   .card-img-top {
     object-fit: cover;
     max-height: 180px;
-    border-bottom: 1px solid #00ffee;
-    box-shadow: 0 0 8px #00ffee;
+    border-bottom: 1px solid #0000ff;
+    box-shadow: 0 0 8px #0000ff50;
   }
 
   .no-image {
     height: 180px;
-    background-color: #222;
+    background-color: #f0f0f0;       // gris claro para "sin imagen"
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #777;
+    color: #6666ff;                  // azul grisáceo
     font-style: italic;
-    text-shadow: 0 0 2px #999;
+    text-shadow: none;
   }
 
   .card-body {
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(255, 255, 255, 0.9); // fondo casi blanco, semi-transparente
     padding: 1rem;
 
     .body__title {
@@ -39,17 +39,16 @@
       font-weight: bold;
       margin-bottom: 0.75rem;
       text-align: center;
-      text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee;
+      color: #0000cc;
+      text-shadow: none;
     }
 
     .body__text {
       font-size: 1rem;
-      color: #ccffff;
-      text-shadow: 0 0 3px #00ffee;
+      color: #000099;
 
       strong {
-        color: #00ffee;
-        text-shadow: 0 0 4px #00ffee;
+        color: #0000cc;
       }
     }
   }

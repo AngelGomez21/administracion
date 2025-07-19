@@ -1,14 +1,12 @@
 .layout-container {
   min-height: 100vh;
-  background-color: #000;  // fondo negro
-  color: #fff;             // texto blanco para visibilidad
+  background-color: #fff; /* fondo blanco */
+  color: #0077ff;         /* texto azul */
   display: flex;
   flex-direction: column;
 
-
   .body {
-    flex: 1;  // para que tome todo el espacio disponible
+    flex: 1;  /* para que tome todo el espacio disponible */
     padding: 20px;
   }
-
 }

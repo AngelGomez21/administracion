@@ -1,43 +1,42 @@
 @keyframes inputGlow {
   0%, 100% {
-    text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee;
+    text-shadow: 0 0 5px #0077ff, 0 0 10px #0077ff;
   }
   50% {
-    text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+    text-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff;
   }
 }
 
-/* Estilo general del formulario */
 form {
-  background-color: #111;
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  color: #fff;
+  color: #0077ff;
 
   label {
-    color: #00ffee;
+    color: #0055cc;
     font-weight: 600;
-    text-shadow: 0 0 5px #00ffee;
+    text-shadow: 0 0 3px #66b3ff;
   }
 
   .form-control {
-    background-color: #1e1e1e;
-    border: 1px solid #00ffee;
-    color: #00ffee;
+    background-color: #f5faff;
+    border: 1px solid #3399ff;
+    color: #0055cc;
     font-weight: bold;
     animation: inputGlow 2s infinite ease-in-out;
     transition: all 0.3s ease-in-out;
 
     &::placeholder {
-      color: #00ffee80;
+      color: #3399ff80;
       opacity: 1;
     }
 
     &:focus {
-      background-color: #252525;
-      border-color: #00ccff;
-      box-shadow: 0 0 10px #00ffee;
-      color: #00ffee;
+      background-color: #e6f2ff;
+      border-color: #3399ff;
+      box-shadow: 0 0 10px #3399ff;
+      color: #003366;
     }
 
     &:invalid {
@@ -47,9 +46,9 @@ form {
   }
 
   .input-group-text {
-    background-color: #111;
-    color: #00ffee;
-    border: 1px solid #00ffee;
+    background-color: #e6f2ff;
+    color: #0055cc;
+    border: 1px solid #3399ff;
   }
 
   .form-control.is-invalid {
@@ -68,22 +67,22 @@ form {
   }
 }
 
-/* Dropzone para imagen */
 .form-imagen {
   margin-top: 15px;
-  border: 2px dashed #00ffee;
+  border: 2px dashed #3399ff;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  background-color: #f0f8ff;
 
   &:hover {
-    background-color: #1a1a1a;
+    background-color: #e6f2ff;
   }
 
   img {
-    box-shadow: 0 0 15px #00ffee;
+    box-shadow: 0 0 15px #3399ff;
     transition: transform 0.3s ease;
 
     &:hover {
@@ -92,40 +91,38 @@ form {
   }
 }
 
-/* Botón de envío */
 button[type="submit"] {
-  background-color: #00ffee;
-  color: #111;
+  background-color: #3399ff;
+  color: #fff;
   border: none;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px #00ffee;
+  box-shadow: 0 0 10px #3399ff;
 
   &:hover {
-    background-color: #00ccff;
-    box-shadow: 0 0 15px #00ccff, 0 0 20px #00ccff;
+    background-color: #0077ff;
+    box-shadow: 0 0 15px #0077ff, 0 0 20px #0077ff;
   }
 }
 
-/* Estilo neon para input type="file" */
 input[type="file"] {
-  background-color: #1e1e1e;
-  border: 2px dashed #00ffee;
-  color: #00ffee;
+  background-color: #f0f8ff;
+  border: 2px dashed #3399ff;
+  color: #0055cc;
   padding: 10px;
   border-radius: 8px;
   animation: inputGlow 2s infinite ease-in-out;
   font-weight: bold;
-  text-shadow: 0 0 5px #00ffee;
+  text-shadow: 0 0 5px #3399ff;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &::file-selector-button {
-    background-color: #111;
-    color: #00ffee;
-    border: 1px solid #00ffee;
+    background-color: #e6f2ff;
+    color: #0055cc;
+    border: 1px solid #3399ff;
     padding: 6px 12px;
     border-radius: 6px;
     font-weight: bold;
@@ -134,17 +131,17 @@ input[type="file"] {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: #1a1a1a;
-      box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+      background-color: #d0eaff;
+      box-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff;
     }
   }
 
   &:hover {
-    background-color: #252525;
+    background-color: #e6f2ff;
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 10px #00ffee;
+    box-shadow: 0 0 10px #3399ff;
   }
 }
